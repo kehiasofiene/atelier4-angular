@@ -1,0 +1,12 @@
+<p>todo-list works!</p>
+<table>
+    <tr *ngFor="let p of todolist" >
+        <td>{{p.title}}}</td>
+        <td>{{p.id}}</td>
+        <td>{{p.userId}}</td>
+        <td>{{p.completed}}</td>
+        <a routerLink="/{{p.userId}}">voir todo</a>
+    </tr>
+    <tr>{{n}}</tr>
+    <tr><input type="submit" value="bilan" class="btn btn-primary" (click)="getNumberOf()"></tr>
+</table>
