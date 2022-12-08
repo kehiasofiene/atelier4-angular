@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Utilisateur } from 'src/app/model/Utilisateur';
 import { CalculService } from '../services/calcul.service';
-import { UserService } from '../services/user.service';
+
 
 @Component({
   selector: 'app-users',
@@ -11,7 +11,9 @@ import { UserService } from '../services/user.service';
 export class UsersComponent implements OnInit {
   listUsers!:Utilisateur[];
   n!:number;
-  constructor(private servicecalc:CalculService,private userservc:UserService) { }
+  user:any;
+  verifier: boolean = false;
+  constructor(private servicecalc:CalculService) { }
 
   ngOnInit(): void {
     this.listUsers=[
@@ -20,8 +22,10 @@ export class UsersComponent implements OnInit {
       {id: 3, name: "Clementine Bauch", username: "Samantha", email:"Nathan@yesenia.net"}
       ]
   }
-  getnumberof(value:any){
-    this.n=this.servicecalc.getNumberOf(this.listUsers,'username',value)
+  getnumberof(){
+    this.n=this.servicecalc.getNumberOf(this.listUsers,'username',this.user);
+    console.log(this.user);
+    this.verifier = !this.verifier;
   }
  
 

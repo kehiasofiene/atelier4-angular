@@ -15,5 +15,6 @@ export class TodoService {
   }
   getPTodo(id:any):Observable<Utilisateur> {
     return this.http.get<Utilisateur>('http://jsonplaceholder.typicode.com/todos'+id)
+    
   }
 }

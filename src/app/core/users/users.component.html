@@ -1,6 +1,9 @@
 <p>users works!</p>
+    <input type="text" [(ngModel)]="user"><button (click)="getnumberof()">vérifier</button>
+    <pre *ngIf="verifier==true">
+le nombre d'utilisateurs ayant le username " {{user}} " est : {{n}}
+</pre>
 <table>
-    <input type="textfield" name="marquePreferee"><input type="submit" value="vérifier">
     <tr *ngFor="let l of listUsers" >
         <td>{{l.id}}</td>
         <td>{{l.name}}</td>
